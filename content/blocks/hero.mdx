@@ -1,19 +1,28 @@
-export const HeroBlock = ({ heading, text, bg }) => (
-  <Section bg={bg} pt="8|12|16|24">
+export const HeroBlock = (
+  { 
+    bgColour, 
+    headline, 
+    subTxt, 
+    btnUrl, 
+    btnTxt, 
+    imgPath,
+    ...props 
+  }) => (
+  <Section bg={bgColour} pt="8|12|16|24">
     <Container>
       <Flexbox flexWrap="wrap" justifyContent="center" textAlign="center">
-        <H1 m="0" fontWeight="extrabold" lineHeight="tight" pb="4" px="0|12|16|24">
-          Cameras, Equipment and Ephemera.
+        <H1 m="0" fontWeight="extrabold" lineHeight="tight" pb="4" px="0|12|16|24" flexBasis="100%">
+          {headline}
         </H1>
-        <P fontSize="xl|2xl" mt="2" px="0|12|16|24">
-          A resource hub dedicated to documenting information on Thornton Pickard vintage cameras, equipment and ephemera.
+        <P fontSize="xl|2xl" mt="2" px="0|12|16|24" flexBasis="100%">
+          {subTxt}
         </P>
-        <ButtonLink href="#" variant="primary">
-          See Catalogue
+        <ButtonLink href={btnUrl} variant="primary">
+          {btnTxt}
           <Icon name="arrow-right" ml="4" />
         </ButtonLink>
         <Image
-          src="placeholder.jpg"
+          src={imgPath}
           h="40|56|80"
           mt="12|14|16"
           roundedTop="xl"

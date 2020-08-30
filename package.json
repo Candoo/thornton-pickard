@@ -13,10 +13,13 @@
   },
   "dependencies": {
     "@reflexjs/gatsby-theme-base": "^0.3.3",
+    "@reflexjs/preset-flex": "^0.2.0",
     "gatsby": "^2.22.11",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "typeface-inter": "^3.12.0"
+    "typeface-inter": "^3.12.0",
+    "typeface-open-sans": "0.0.75",
+    "typeface-prata": "0.0.72"
   },
   "devDependencies": {}
 }

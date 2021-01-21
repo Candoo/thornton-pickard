@@ -8,6 +8,13 @@ module.exports = {
     siteUrl: process.env.SITE_URL || "https://www.pixelwhizz.co.uk/",
   },
   plugins: [
-    "@reflexjs/gatsby-theme-base"
+    "@reflexjs/gatsby-theme-base",
+    {
+      resolve: `@reflexjs/gatsby-theme-doc`,
+      options: {
+        contentPath: "content/catalogue",
+        basePath: "/catalogue",
+      },
+    },
   ],
 }

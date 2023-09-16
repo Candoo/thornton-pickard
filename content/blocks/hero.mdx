@@ -1,29 +1,40 @@
-<Section py="8|12|16|24">
-  <Container>
-    <Grid col="1|2" gap="8|12|16" alignItems="center">
-      <Image
-        src="placeholder.jpg"
-        colStart="null|2"
-        w="full"
-        rounded="lg"
-        overflow="hidden"
-      />
-      <Flexbox
-        flexDirection="column"
-        alignItems="center|flex-start"
-        textAlign="center|left"
-      >
-        <H1 m="0" fontWeight="extrabold" lineHeight="tight">
-          Supercharge your site.
-        </H1>
-        <P fontSize="xl|2xl" mt="2">
-          Build a blazing fast site with Gatsby and Reflex.
-        </P>
-        <ButtonLink href="#" variant="primary">
-          Get Started
-          <Icon name="arrow-right" ml="4" />
-        </ButtonLink>
-      </Flexbox>
-    </Grid>
-  </Container>
-</Section>
+import bgImage from "../images/noisy-texture.png"
+
+export const HeroBlock = (
+  { 
+    bgColour, 
+    headline, 
+    subTxt, 
+    btnUrl, 
+    btnTxt, 
+    imgPath,
+    ...props 
+  }) => {
+    const bgImageUrl = `url(${bgImage})`
+    return (
+      <Section bg={bgColour} pt="8|12|16|24" backgroundImage={bgImageUrl}>
+        <Container>
+          <Flexbox flexWrap="wrap" justifyContent="center" textAlign="center">
+            <H1 m="0" fontWeight="extrabold" lineHeight="tight" pb="4" px="0|12|16|24" flexBasis="100%">
+              {headline}
+            </H1>
+            <P fontSize="xl|2xl" mt="2" px="0|12|16|24" flexBasis="100%">
+              {subTxt}
+            </P>
+            <ButtonLink href={btnUrl} variant="primary">
+              {btnTxt}
+              <Icon name="arrow-right" ml="4" />
+            </ButtonLink>
+            <Image
+              src={imgPath}
+              overflow="hidden"
+              flexBasis="100%"
+              mixBlendMode="difference"
+              filter="invert(1)"
+              opacity="0.7"
+            />
+          </Flexbox>
+        </Container>
+      </Section>
+    )
+}

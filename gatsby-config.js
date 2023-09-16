@@ -3,9 +3,18 @@ require(`dotenv`).config()
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
-    title: "Reflex",
-    description: "Starter for Reflex.",
-    siteUrl: process.env.SITE_URL || "http://localhost:8000",
+    title: "Thornton Pickard",
+    description: "A resource dedicated to Thornton Pickard vintage cameras, equipment and ephemera",
+    siteUrl: process.env.SITE_URL || "https://www.pixelwhizz.co.uk/",
   },
-  plugins: ["@reflexjs/gatsby-theme-base"],
+  plugins: [
+    "@reflexjs/gatsby-theme-base",
+    {
+      resolve: `@reflexjs/gatsby-theme-doc`,
+      options: {
+        contentPath: "content/catalogue",
+        basePath: "/catalogue",
+      },
+    },
+  ],
 }
